@@ -18,3 +18,7 @@ class GetConfigurationDetails(object):
     def getPassword(self):
 
         return IOConfiguration.IOConfiguration.password
+
+    def getEmailQuestion(self):
+
+        return IOConfiguration.IOConfiguration.emailQuestion

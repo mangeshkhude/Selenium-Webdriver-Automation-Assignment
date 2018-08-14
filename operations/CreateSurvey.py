@@ -2,6 +2,8 @@
 Creating survey
 """
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 import time
 
 class CreateSurvey(object):
@@ -12,6 +14,7 @@ class CreateSurvey(object):
     _select_survey = "react-select-2--option-4"
     _button_create_survey = "//button[@class='wds-button']"
     _survey_from_scratch = "//button[@class='wds-button']//span[contains(text(),'START FROM SCRATCH')]"
+    _popupRemove = "//a[@class='wds-button wds-button--sm wds-button--ghost'][contains(text(),'REMOVE')]"
 
     def clickCreateSurvey(self, driver):
         createSurveyElement = driver.find_element(By.XPATH, CreateSurvey()._nav_create_survey)
@@ -30,11 +33,16 @@ class CreateSurvey(object):
         selectSurvey.click()
 
     def buttonCreateSurvey(self, driver):
-        if driver.find_element(By.XPATH, CreateSurvey()._button_create_survey) is not None:
-            createSurvey = driver.find_element(By.XPATH, CreateSurvey()._button_create_survey)
-            createSurvey.click()
-            time.sleep(60)
-        elif driver.find_element(By.XPATH, CreateSurvey()._survey_from_scratch) is not None :
-            createSurvey = driver.find_element(By.XPATH, CreateSurvey()._survey_from_scratch)
-            createSurvey.click()
-            time.sleep(60)
+        createSurvey = driver.find_element(By.XPATH, CreateSurvey()._button_create_survey)
+        createSurvey.click()
+        time.sleep(2)
+
+    def handlePopup(self, driver):
+        #Wait till browser loads the element
+        try:
+            removePopup = WebDriverWait(driver, 3).until(EC.presence_of_element_located((By.XPATH, CreateSurvey()._popupRemove)))
+            removePopup.click()
+        except:
+            removePopup = WebDriverWait(driver, 3).until(EC.presence_of_element_located((By.XPATH, CreateSurvey()._popupRemove)))
+            removePopup.click()
+        time.sleep(5)
