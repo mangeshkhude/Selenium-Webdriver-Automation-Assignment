@@ -33,7 +33,7 @@ class SeleniumWebdriverAutomationAssignment(object):
         # Handle Popup
         CreateSurvey.handlePopup(self, driver)
 
-        # Operations on created Survey
+        # Operations on created Survey.
 
         # Editing and saving survey title
         OperationsOnSurvey.editAndSaveSurveyTitle(self, driver)
