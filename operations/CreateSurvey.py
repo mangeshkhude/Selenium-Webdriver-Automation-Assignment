@@ -23,19 +23,16 @@ class CreateSurvey(object):
     def sendSyrveyTitle(self, driver):
         surveyTitle = driver.find_element(By.ID, CreateSurvey()._survey_title)
         surveyTitle.send_keys("Test Title from Selenium")
-        time.sleep(2)
 
     def surveyCategory(self, driver):
         surveyCategory = driver.find_element(By.XPATH, CreateSurvey()._survey_category)
         surveyCategory.click()
         selectSurvey = driver.find_element(By.ID, CreateSurvey()._select_survey)
-        time.sleep(2)
         selectSurvey.click()
 
     def buttonCreateSurvey(self, driver):
         createSurvey = driver.find_element(By.XPATH, CreateSurvey()._button_create_survey)
         createSurvey.click()
-        time.sleep(2)
 
     def handlePopup(self, driver):
         #Wait till browser loads the element
@@ -45,4 +42,3 @@ class CreateSurvey(object):
         except:
             removePopup = WebDriverWait(driver, 3).until(EC.presence_of_element_located((By.XPATH, CreateSurvey()._popupRemove)))
             removePopup.click()
-        time.sleep(5)

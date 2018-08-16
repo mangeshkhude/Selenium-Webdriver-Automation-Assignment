@@ -17,11 +17,8 @@ class SeleniumWebdriverAutomationAssignment(object):
 
         # Login Operations
         LoginOperation.navToLogin(self, driver)
-        time.sleep(2)
         LoginOperation.sendUsernameAndPass(self, driver)
-        time.sleep(2)
         LoginOperation.sendPassword(self, driver)
-        time.sleep(2)
         LoginOperation.clicklogIn(self, driver)
 
         # Survay Operations
@@ -39,7 +36,7 @@ class SeleniumWebdriverAutomationAssignment(object):
         OperationsOnSurvey.editAndSaveSurveyTitle(self, driver)
 
         # Add Page Title
-        OperationsOnSurvey.addPageTitle(self, driver)
+        #OperationsOnSurvey.addPageTitle(self, driver)
 
         # Add Questions
         AddQuestion.enterQuestion(self, driver)
