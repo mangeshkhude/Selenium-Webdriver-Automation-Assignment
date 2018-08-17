@@ -58,3 +58,55 @@ class GetConfigurationDetails(object):
     def getCommentsFeedback(self):
 
         return IOConfiguration.commentsFeedback
+
+    def getQuestionBank(self):
+
+        return IOConfiguration.questionBank
+
+    def getThemes(self):
+
+        return  IOConfiguration.themes
+
+    def getGraphical(self):
+
+        return IOConfiguration.graphical
+
+    def getTemplate(self):
+
+        return IOConfiguration.template
+
+    def getCollectors(self):
+
+        return IOConfiguration.collectors
+
+    def getService(self):
+
+        return  IOConfiguration.service
+
+    def getSupport(self):
+
+        return IOConfiguration.support
+
+    def getResponsive(self):
+
+        return  IOConfiguration.responsive
+
+    def getVeryGood(self):
+
+        return IOConfiguration.veryGood
+
+    def getGood(self):
+
+        return IOConfiguration.good
+
+    def getAvarage(self):
+
+        return IOConfiguration.avarage
+
+    def getBelowAvarage(self):
+
+        return IOConfiguration.belowAvarage
+
+    def getFeatureList(self):
+
+        return IOConfiguration.featureList

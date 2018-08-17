@@ -37,8 +37,8 @@ class CreateSurvey(object):
     def handlePopup(self, driver):
         #Wait till browser loads the element
         try:
-            removePopup = WebDriverWait(driver, 3).until(EC.presence_of_element_located((By.XPATH, CreateSurvey()._popupRemove)))
+            removePopup = WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.XPATH, CreateSurvey()._popupRemove)))
             removePopup.click()
         except:
-            removePopup = WebDriverWait(driver, 3).until(EC.presence_of_element_located((By.XPATH, CreateSurvey()._popupRemove)))
+            removePopup = WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.XPATH, CreateSurvey()._popupRemove)))
             removePopup.click()
