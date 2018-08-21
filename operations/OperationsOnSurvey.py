@@ -12,7 +12,7 @@ class OperationsOnSurvey(object):
     _save_edited_survey = "//form[@id='surveyTitleForm']//a[contains(text(),'SAVE')]"
     #_page_title_button = "//h2[@class='page-title-wrapper clearfix']"
     _page_title_text = "//div[@id='pageTitle']"
-    _save_page_title = "//form[@id='pageTitleForm']//a[@class='wds-button wds-button--sm save'][contains(text(),'SAVE')]"
+    _save_page_title = "//form[@id='pageTitleForm']//a[contains(text(),'SAVE')]"
 
 
 

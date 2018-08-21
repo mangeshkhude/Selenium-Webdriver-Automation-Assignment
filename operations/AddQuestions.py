@@ -5,7 +5,7 @@ from selenium.webdriver.common.by import By
 import time
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from utilities.GetConfigurationDetails import GetConfigurationDetails
+
 
 from utilities.GetConfigurationDetails import GetConfigurationDetails
 
@@ -14,7 +14,7 @@ class AddQuestion(object):
     _add_question_text1 = "//div[@id='questionTitleWrap']//div[@id ='editTitle']"
     _add_question_text2 = "//div[@id='editTitle']"
     _change_type_of_question = "//a[@id='changeQType' and @class='sm-input']"
-    _select_single_textbox = "//ul[@class='add-q-menu-left']//a[text()='Single Textbox']"
+    _select_single_textbox = "//a[contains(text(),'Single Textbox')]"
     _select_star_rating = "//a[contains(text(),'Star Rating')]"
     _select_date = "//a[contains(text(),'Date / Time')]"
     _time_field = "//table[@id='rows']//label[@for='toggleTimeVisible'][contains(text(),'Time Info')]"
@@ -50,13 +50,9 @@ class AddQuestion(object):
     def enterQuestion(self, driver):
 
         # Adding email question
-        time.sleep(2)
-        add_que1 = driver.find_element(By.XPATH, AddQuestion._add_question_text1)
-        time.sleep(2)
+        add_que1 = WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.XPATH, AddQuestion._add_question_text1)))
         add_que1.send_keys(GetConfigurationDetails.getEmailQuestion(self))
-        time.sleep(2)
-        driver.find_element(By.XPATH, AddQuestion._change_type_of_question).click()
-        time.sleep(2)
+        WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.XPATH, AddQuestion._change_type_of_question))).click()
         driver.find_element(By.XPATH, AddQuestion._select_single_textbox).click()
         time.sleep(2)
         driver.find_element(By.XPATH, AddQuestion._save_question ).click()

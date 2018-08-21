@@ -12,13 +12,13 @@ class ChromeUtility(object):
         driverLocation = 'D:\Selenium Chrome Driver\chromedriver.exe'
         os.environ['webdriver.chrome.driver'] = driverLocation
         driver = webdriver.Chrome(driverLocation)
-        driver.implicitly_wait(0.5)
+        driver.implicitly_wait(10)
         driver.maximize_window()
         return driver
 
     def getFirefoxDriver(self):
         driver = webdriver.Firefox()
-        driver.implicitly_wait(0.5)
+        driver.implicitly_wait(10)
         driver.maximize_window()
         return driver
 
