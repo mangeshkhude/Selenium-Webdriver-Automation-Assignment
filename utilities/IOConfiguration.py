@@ -7,6 +7,7 @@ class IOConfiguration:
     URL = "https://www.surveymonkey.com"
     userName ="mangesh.khude"
     password = "infoserver123"
+    invalidPassword = "invalidpass"
 
     # Questions
     emailQuestion = "Enter your email?"

@@ -6,7 +6,7 @@ from operations.LoginOperation import LoginOperation
 from operations.CreateSurvey import CreateSurvey
 from operations.OperationsOnSurvey import OperationsOnSurvey
 from operations.AddQuestions import AddQuestion
-import tests.AllTests as testlogin
+import allcases.AllTests as testlogin
 class FromBrowser(object):
 
     def getFromChrome(self):

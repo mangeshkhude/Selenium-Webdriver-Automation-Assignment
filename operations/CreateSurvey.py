@@ -4,9 +4,14 @@ Creating survey
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from base.basepage import BasePage
 import time
 
-class CreateSurvey(object):
+class CreateSurvey(BasePage):
+
+    def __init__(self, driver):
+        super().__init__(driver)
+        self.driver = driver
 
     _nav_create_survey = "//a[contains(@class,'create-survey alt btn SL_split')]"
     _survey_title = "surveyTitle"
@@ -16,38 +21,23 @@ class CreateSurvey(object):
     _survey_from_scratch = "//button[@class='wds-button']//span[contains(text(),'START FROM SCRATCH')]"
     _popupRemove = "//a[@class='wds-button wds-button--sm wds-button--ghost'][contains(text(),'REMOVE')]"
 
-    def clickCreateSurvey(driver):
-        time.sleep(2)
-        createSurveyElement = driver.find_element(By.XPATH, CreateSurvey()._nav_create_survey)
-        createSurveyElement.click()
+    def clickCreateSurvey(self):
+        self.elementClick(self._nav_create_survey,locatorType="xpath")
         return True
 
-    def sendSyrveyTitle(driver):
-        time.sleep(2)
-        surveyTitle = driver.find_element(By.ID, CreateSurvey()._survey_title)
-        surveyTitle.send_keys("Test Title from Selenium")
+    def sendSyrveyTitle(self):
+        self.sendKeys("Test Title from Selenium",self._survey_title)
         return True
 
-    def surveyCategory(driver):
-        time.sleep(2)
-        surveyCategory = driver.find_element(By.XPATH, CreateSurvey()._survey_category)
-        surveyCategory.click()
-        selectSurvey = driver.find_element(By.ID, CreateSurvey()._select_survey)
-        selectSurvey.click()
+    def surveyCategory(self):
+        self.elementClick(self._survey_category, locatorType="xpath")
+        self.elementClick(self._select_survey)
         return True
 
-    def buttonCreateSurvey(driver):
-        time.sleep(2)
-        createSurvey = driver.find_element(By.XPATH, CreateSurvey()._button_create_survey)
-        createSurvey.click()
+    def buttonCreateSurvey(self):
+        self.elementClick(self._button_create_survey, locatorType="xpath")
         return True
 
-    def handlePopup(driver):
-        #Wait till browser loads the element
-        try:
-            removePopup = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, CreateSurvey()._popupRemove)))
-            removePopup.click()
-            return True
-        except:
-            removePopup = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, CreateSurvey()._popupRemove)))
-            removePopup.click()
+    def handlePopup(self):
+        self.elementClick(self._popupRemove, locatorType="xpath")
+        return True
