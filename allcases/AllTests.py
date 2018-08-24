@@ -8,7 +8,6 @@ import utilities.CustomLogger as cl
 import logging
 from utilities.GetConfigurationDetails import GetConfigurationDetails as gcd
 
-import time
 
 @pytest.fixture(scope='module')
 def getDriver():
@@ -74,3 +73,49 @@ def test_handle_popup(getDriver):
 def test_email_question(getDriver):
     addQuestion = AddQuestion(getDriver)
     assert addQuestion.emailQuestion()
+
+@pytest.mark.run(order=10)
+def test_rating_question(getDriver):
+    addQuestion = AddQuestion(getDriver)
+    assert addQuestion.ratingQuestion()
+
+@pytest.mark.run(order=11)
+def test_date_using_question(getDriver):
+    addQuestion = AddQuestion(getDriver)
+    assert addQuestion.dateOfUsing()
+
+@pytest.mark.run(order=12)
+def test_meaningful_data_question(getDriver):
+    addQuestion = AddQuestion(getDriver)
+    assert addQuestion.meaningfulData()
+
+@pytest.mark.run(order=13)
+def test_friend_recomanded_question(getDriver):
+    addQuestion = AddQuestion(getDriver)
+    assert addQuestion.recomandFriendsQuestion()
+
+@pytest.mark.run(order=14)
+def test_use_survey_monkey_question(getDriver):
+    addQuestion = AddQuestion(getDriver)
+    assert addQuestion.useSurveyMonkeyQuestion()
+
+@pytest.mark.run(order=15)
+def test_comments_question(getDriver):
+    addQuestion = AddQuestion(getDriver)
+    assert addQuestion.commentsFeedbackQuestion()
+
+@pytest.mark.run(order=16)
+def test_featured_question(getDriver):
+    addQuestion = AddQuestion(getDriver)
+    assert addQuestion.featureQuestion()
+
+@pytest.mark.run(order=17)
+def test_matrix_rating_question(getDriver):
+    addQuestion = AddQuestion(getDriver)
+    assert addQuestion.matrixRatingQuestion()
+
+@pytest.mark.run(order=18)
+def test_rate_featured_question(getDriver):
+    addQuestion = AddQuestion(getDriver)
+    assert addQuestion.ratefeatureQuestion()
+

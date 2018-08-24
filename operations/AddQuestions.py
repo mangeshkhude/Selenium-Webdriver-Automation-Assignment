@@ -70,213 +70,131 @@ class AddQuestion(BasePage):
         self.elementClick(self._save_question, locatorType="xpath")
         return True
 
+    def dateOfUsing(self):
 
-        # newQuestion = driver.find_element(By.XPATH, AddQuestion._new_question)
-        # newQuestion.click()
-        # time.sleep(5)
-        # # adding question details
-        # add_que4 = driver.find_element(By.XPATH, AddQuestion._add_question_text2)
-        # add_que4.send_keys(GetConfigurationDetails.getRating(self))
-        # time.sleep(5)
-        # driver.find_element(By.XPATH, AddQuestion._change_type_of_question).click()
-        # time.sleep(5)
-        # driver.find_element(By.XPATH, AddQuestion._select_star_rating).click()
-        # time.sleep(2)
+        # Adding date of using question
+        self.elementClick(locator=self._new_question, locatorType="xpath")
+        self.sendKeys(GetConfigurationDetails.getRating(GetConfigurationDetails), locator=self._add_question_text2,locatorType="xpath")
+        self.elementClick(self._change_type_of_question, locatorType="xpath")
+        self.elementClick(self._select_date, locatorType="xpath")
+        self.elementClick(self._time_field, locatorType="xpath")
+        self.elementClick(self._save_question, locatorType="xpath")
+        return True
 
-        # # Saving question
-        # driver.find_element(By.XPATH, AddQuestion._save_question).click()
-        # time.sleep(5)
-        #
-        # # Adding date of using question
-        # newQuestion.click()
-        #
-        # # Adding Question details
-        # time.sleep(2)
-        # add_que3 = driver.find_element(By.XPATH, AddQuestion._add_question_text1)
-        # add_que3.send_keys(GetConfigurationDetails.getFromWhen(self))
-        # time.sleep(5)
-        # driver.find_element(By.XPATH, AddQuestion._change_type_of_question).click()
-        # time.sleep(5)
-        # driver.find_element(By.XPATH, AddQuestion._select_date).click()
-        # time.sleep(5)
-        #
-        # # UnSelect time
-        # timeField = driver.find_element(By.XPATH, AddQuestion._time_field)
-        # timeField.click()
-        # time.sleep(2)
-        #
-        # #Saving Question
-        # driver.find_element(By.XPATH, AddQuestion._save_question).click()
-        # time.sleep(5)
-        #
-        # newQuestion.click()
-        # time.sleep(5)
-        # # Meaningful data question
-        # add_que5 = driver.find_element(By.XPATH, AddQuestion._add_question_text1)
-        # add_que5.send_keys(GetConfigurationDetails.getMeaningfulData(self))
-        # time.sleep(5)
-        # driver.find_element(By.XPATH, AddQuestion._change_type_of_question).click()
-        # time.sleep(5)
-        # driver.find_element(By.XPATH, AddQuestion._dropdown).click()
-        # time.sleep(2)
-        # driver.find_element(By.XPATH, AddQuestion._select_dropdown_type).click()
-        # time.sleep(2)
-        # driver.find_element(By.XPATH, AddQuestion._select_yes_no).click()
-        # time.sleep(2)
-        #
-        # # Saving Question
-        # driver.find_element(By.XPATH, AddQuestion._save_question).click()
-        # time.sleep(5)
-        #
-        # newQuestion.click()
-        # time.sleep(5)
-        # # Friend refer Question
-        # add_que9 = driver.find_element(By.XPATH, AddQuestion._add_question_text1)
-        # add_que9.send_keys(GetConfigurationDetails.getRecomendToFriends(self))
-        # time.sleep(5)
-        # driver.find_element(By.XPATH, AddQuestion._change_type_of_question).click()
-        # time.sleep(5)
-        # driver.find_element(By.XPATH, AddQuestion._radio).click()
-        # time.sleep(2)
-        # driver.find_element(By.XPATH, AddQuestion._select_dropdown_type).click()
-        # time.sleep(2)
-        # driver.find_element(By.XPATH, AddQuestion._select_yes_no).click()
-        # time.sleep(2)
-        #
-        # # Saving Question
-        # driver.find_element(By.XPATH, AddQuestion._save_question).click()
-        # time.sleep(5)
-        #
-        # # Use Of Survey Monkey
-        # newQuestion.click()
-        # time.sleep(5)
-        # # Friend refer Question
-        # add_que10 = driver.find_element(By.XPATH, AddQuestion._add_question_text1)
-        # add_que10.send_keys(GetConfigurationDetails.getUseSurveymonkey(self))
-        # time.sleep(5)
-        # driver.find_element(By.XPATH, AddQuestion._change_type_of_question).click()
-        # time.sleep(5)
-        # driver.find_element(By.XPATH, AddQuestion._radio).click()
-        # time.sleep(2)
-        # driver.find_element(By.XPATH, AddQuestion._select_dropdown_type).click()
-        # time.sleep(2)
-        # driver.find_element(By.XPATH, AddQuestion._always_never).click()
-        # time.sleep(2)
-        #
-        # # Saving Question
-        # driver.find_element(By.XPATH, AddQuestion._save_question).click()
-        # time.sleep(5)
-        #
-        # newQuestion.click()
-        # time.sleep(5)
-        #
-        # # Comment and Feedback
-        # add_que1 = driver.find_element(By.XPATH, AddQuestion._add_question_text1)
-        # time.sleep(1)
-        # add_que1.send_keys(GetConfigurationDetails.getCommentsFeedback(self))
-        # time.sleep(5)
-        # driver.find_element(By.XPATH, AddQuestion._change_type_of_question).click()
-        # time.sleep(2)
-        # driver.find_element(By.XPATH, AddQuestion._comment_box).click()
-        # time.sleep(2)
-        # driver.find_element(By.XPATH, AddQuestion._save_question).click()
-        # time.sleep(5)
-        #
-        # newQuestion.click()
-        # time.sleep(5)
-        # # Features of Survey monkey
-        # add_que1 = driver.find_element(By.XPATH, AddQuestion._add_question_text1)
-        # time.sleep(1)
-        # add_que1.send_keys(GetConfigurationDetails.getFeatures(self))
-        # time.sleep(5)
-        # driver.find_element(By.XPATH, AddQuestion._change_type_of_question).click()
-        # time.sleep(2)
-        # driver.find_element(By.XPATH, AddQuestion._checkboxes).click()
-        # time.sleep(2)
-        # # Adding options
-        # driver.find_element(By.XPATH, AddQuestion._add_options).click()
-        # time.sleep(2)
-        # driver.find_element(By.XPATH, AddQuestion._add_options).click()
-        # time.sleep(2)
-        # questionBankk = driver.find_element(By.XPATH, AddQuestion._question_bank_option)
-        # time.sleep(2)
-        # questionBankk.send_keys(GetConfigurationDetails.getQuestionBank(self))
-        # time.sleep(2)
-        # themess = driver.find_element(By.XPATH, AddQuestion._themes)
-        # themess.send_keys(GetConfigurationDetails.getThemes(self))
-        # time.sleep(2)
-        # graphicalResultss = driver.find_element(By.XPATH, AddQuestion._graphical_results)
-        # graphicalResultss.send_keys(GetConfigurationDetails.getGraphical(self))
-        # time.sleep(2)
-        # templatee = driver.find_element(By.XPATH, AddQuestion._template)
-        # templatee.send_keys(GetConfigurationDetails.getTemplate(self))
-        # time.sleep(2)
-        # collectorss = driver.find_element(By.XPATH, AddQuestion._collectors)
-        # collectorss.send_keys(GetConfigurationDetails.getCollectors(self))
-        # time.sleep(2)
-        # # saving question
-        # driver.find_element(By.XPATH, AddQuestion._save_question).click()
-        # time.sleep(5)
-        #
-        # newQuestion.click()
-        # time.sleep(5)
-        # # Matrix Rating of Survey monkey
-        # add_que1 = driver.find_element(By.XPATH, AddQuestion._add_question_text1)
-        # time.sleep(1)
-        # add_que1.send_keys(GetConfigurationDetails.getRateFeatures(self))
-        # time.sleep(5)
-        # driver.find_element(By.XPATH, AddQuestion._change_type_of_question).click()
-        # time.sleep(2)
-        # driver.find_element(By.XPATH, AddQuestion._matrix_rating_scale).click()
-        # time.sleep(2)
-        # servicee = driver.find_element(By.XPATH, AddQuestion._service)
-        # servicee.send_keys(GetConfigurationDetails.getService(self))
-        # time.sleep(2)
-        # supportt = driver.find_element(By.XPATH, AddQuestion._support)
-        # supportt.send_keys(GetConfigurationDetails.getSupport(self))
-        # time.sleep(2)
-        # responsiveness = driver.find_element(By.XPATH, AddQuestion._responsive)
-        # responsiveness.send_keys(GetConfigurationDetails.getResponsive(self))
-        # time.sleep(2)
-        # veryGoodd = driver.find_element(By.XPATH, AddQuestion._very_good)
-        # veryGoodd.send_keys(GetConfigurationDetails.getVeryGood(self))
-        # time.sleep(2)
-        # godd = driver.find_element(By.XPATH, AddQuestion._good)
-        # godd.send_keys(GetConfigurationDetails.getGood(self))
-        # time.sleep(2)
-        # avaragee = driver.find_element(By.XPATH, AddQuestion._avarage)
-        # avaragee.send_keys(GetConfigurationDetails.getAvarage(self))
-        # time.sleep(2)
-        # belowAvaragee = driver.find_element(By.XPATH, AddQuestion._below_avarage)
-        # belowAvaragee.send_keys(GetConfigurationDetails.getBelowAvarage(self))
-        # time.sleep(2)
-        # driver.find_element(By.XPATH, AddQuestion._remove_option).click()
-        # time.sleep(2)
-        # # saving question
-        # driver.find_element(By.XPATH, AddQuestion._save_question).click()
-        # time.sleep(5)
-        #
-        # # Multiple Text box of Survey monkey
-        # newQuestion.click()
-        # time.sleep(5)
-        # add_que1 = driver.find_element(By.XPATH, AddQuestion._add_question_text1)
-        # time.sleep(1)
-        # add_que1.send_keys(GetConfigurationDetails.getFeatureList(self))
-        # time.sleep(5)
-        # driver.find_element(By.XPATH, AddQuestion._change_type_of_question).click()
-        # time.sleep(2)
-        # driver.find_element(By.XPATH, AddQuestion._multiple_text_boxes).click()
-        # time.sleep(2)
-        # featureLits1 = driver.find_element(By.XPATH, AddQuestion._most_like_feature1)
-        # featureLits1.send_keys("Feature 1")
-        # time.sleep(2)
-        # featureLits2 = driver.find_element(By.XPATH, AddQuestion._most_like_feature2)
-        # featureLits2.send_keys("Feature 2")
-        # time.sleep(2)
-        # featureLits3 = driver.find_element(By.XPATH, AddQuestion._most_like_feature3)
-        # featureLits3.send_keys("Feature 3")
-        # time.sleep(2)
-        #
-        # # saving question
-        # driver.find_element(By.XPATH, AddQuestion._save_question).click()
-        # time.sleep(5)
+    def meaningfulData(self):
+        self.elementClick(locator=self._new_question, locatorType="xpath")
+        self.sendKeys(GetConfigurationDetails.getMeaningfulData(GetConfigurationDetails), locator=self._add_question_text2,
+                      locatorType="xpath")
+        self.elementClick(self._change_type_of_question, locatorType="xpath")
+        self.elementClick(self._dropdown, locatorType="xpath")
+        self.elementClick(self._select_dropdown_type, locatorType="xpath")
+        self.elementClick(self._select_yes_no, locatorType="xpath")
+        self.elementClick(self._save_question, locatorType="xpath")
+
+    def recomandFriendsQuestion(self):
+
+        self.elementClick(locator=self._new_question, locatorType="xpath")
+        self.sendKeys(GetConfigurationDetails.getRecomendToFriends(GetConfigurationDetails),
+                      locator=self._add_question_text2,
+                      locatorType="xpath")
+        self.elementClick(self._change_type_of_question, locatorType="xpath")
+        self.elementClick(self._radio, locatorType="xpath")
+        self.elementClick(self._select_dropdown_type, locatorType="xpath")
+        self.elementClick(self._select_yes_no, locatorType="xpath")
+        self.elementClick(self._save_question, locatorType="xpath")
+        return True
+
+    def useSurveyMonkeyQuestion(self):
+
+        # Use Of Survey Monkey
+        self.elementClick(locator=self._new_question, locatorType="xpath")
+        self.sendKeys(GetConfigurationDetails.getUseSurveymonkey(GetConfigurationDetails),
+                      locator=self._add_question_text2,
+                      locatorType="xpath")
+        self.elementClick(self._change_type_of_question, locatorType="xpath")
+        self.elementClick(self._radio, locatorType="xpath")
+        self.elementClick(self._select_dropdown_type, locatorType="xpath")
+        self.elementClick(self._always_never, locatorType="xpath")
+        self.elementClick(self._save_question, locatorType="xpath")
+        return True
+
+    def commentsFeedbackQuestion(self):
+
+        # Comment and Feedback
+        self.elementClick(locator=self._new_question, locatorType="xpath")
+        self.sendKeys(GetConfigurationDetails.getCommentsFeedback(GetConfigurationDetails),
+                      locator=self._add_question_text2,
+                      locatorType="xpath")
+        self.elementClick(self._change_type_of_question, locatorType="xpath")
+        self.elementClick(self._comment_box, locatorType="xpath")
+        self.elementClick(self._save_question, locatorType="xpath")
+        return True
+
+    def featureQuestion(self):
+
+        # Features of Survey monkey
+        self.elementClick(locator=self._new_question, locatorType="xpath")
+        self.sendKeys(GetConfigurationDetails.getFeatures(GetConfigurationDetails),
+                      locator=self._add_question_text2,
+                      locatorType="xpath")
+        self.elementClick(self._change_type_of_question, locatorType="xpath")
+        self.elementClick(self._checkboxes, locatorType="xpath")
+        self.elementClick(self._add_options, locatorType="xpath")
+        self.elementClick(self._add_options, locatorType="xpath")
+        self.sendKeys(GetConfigurationDetails.getQuestionBank(GetConfigurationDetails),locator=self._question_bank_option, locatorType="xpath")
+        self.sendKeys(GetConfigurationDetails.getThemes(GetConfigurationDetails),
+                      locator=self._themes, locatorType="xpath")
+        self.sendKeys(GetConfigurationDetails.getGraphical(GetConfigurationDetails),
+                      locator=self._graphical_results, locatorType="xpath")
+        self.sendKeys(GetConfigurationDetails.getTemplate(GetConfigurationDetails),
+                      locator=self._template, locatorType="xpath")
+        self.sendKeys(GetConfigurationDetails.getCollectors(GetConfigurationDetails),
+                      locator=self._collectors, locatorType="xpath")
+        self.elementClick(self._save_question, locatorType="xpath")
+        return True
+
+    def matrixRatingQuestion(self):
+
+        self.elementClick(locator=self._new_question, locatorType="xpath")
+        self.sendKeys(GetConfigurationDetails.getRateFeatures(GetConfigurationDetails),
+                      locator=self._add_question_text2,
+                      locatorType="xpath")
+        self.elementClick(self._change_type_of_question, locatorType="xpath")
+        self.elementClick(self._matrix_rating_scale, locatorType="xpath")
+
+        self.sendKeys(GetConfigurationDetails.getService(GetConfigurationDetails),
+                      locator=self._service, locatorType="xpath")
+        self.sendKeys(GetConfigurationDetails.getSupport(GetConfigurationDetails),
+                      locator=self._support, locatorType="xpath")
+        self.sendKeys(GetConfigurationDetails.getResponsive(GetConfigurationDetails),
+                      locator=self._responsive, locatorType="xpath")
+        self.sendKeys(GetConfigurationDetails.getVeryGood(GetConfigurationDetails),
+                      locator=self._very_good, locatorType="xpath")
+        self.sendKeys(GetConfigurationDetails.getGood(GetConfigurationDetails),
+                      locator=self._good, locatorType="xpath")
+        self.sendKeys(GetConfigurationDetails.getAvarage(GetConfigurationDetails),
+                      locator=self._avarage, locatorType="xpath")
+        self.sendKeys(GetConfigurationDetails.getBelowAvarage(GetConfigurationDetails),
+                      locator=self._below_avarage, locatorType="xpath")
+        self.sendKeys(GetConfigurationDetails.getBelowAvarage(GetConfigurationDetails),
+                      locator=self._below_avarage, locatorType="xpath")
+        self.elementClick(self._remove_option, locatorType="xpath")
+        self.elementClick(self._save_question, locatorType="xpath")
+        return True
+
+    def ratefeatureQuestion(self):
+
+        # Multiple Text box of Survey monkey
+        self.elementClick(locator=self._new_question, locatorType="xpath")
+        self.sendKeys(GetConfigurationDetails.getRateFeatures(GetConfigurationDetails),
+                      locator=self._add_question_text2, locatorType="xpath")
+        self.elementClick(self._change_type_of_question, locatorType="xpath")
+        self.elementClick(self._multiple_text_boxes, locatorType="xpath")
+
+        self.sendKeys("Feature 1", locator=self._most_like_feature1, locatorType="xpath")
+        self.sendKeys("Feature 2", locator=self._most_like_feature2, locatorType="xpath")
+        self.sendKeys("Feature 3", locator=self._most_like_feature3, locatorType="xpath")
+        self.elementClick(self._save_question, locatorType="xpath")
+        return True
+
+
