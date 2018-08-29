@@ -2,12 +2,18 @@ import unittest
 import pytest
 from operations.LoginOperation import LoginOperation
 from utilities.GetConfigurationDetails import GetConfigurationDetails as gcd
+import utilities.CustomLogger as cl
+import logging
+pytestmark = pytest.mark.random_order(disabled=True)
 
 @pytest.mark.usefixtures("getDriver")
 class TestLoginn(unittest.TestCase):
 
     @pytest.fixture(autouse=True)
     def objectSetup(self, getDriver):
+        log = cl.customLogger(logging.DEBUG)
+        log.info("=" * 20)
+        log.info("Login Operation")
         self.lo = LoginOperation(getDriver)
 
     @pytest.mark.run(order=1)

@@ -34,6 +34,8 @@ class OperationsOnSurvey(BasePage):
         # Saving edited element
         self.elementClick(self._save_edited_survey, locatorType="xpath")
 
+        return True
+
 
 
     # def addPageTitle(self, driver):

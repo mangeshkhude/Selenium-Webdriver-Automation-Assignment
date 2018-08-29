@@ -41,3 +41,11 @@ class CreateSurvey(BasePage):
     def handlePopup(self):
         self.elementClick(self._popupRemove, locatorType="xpath")
         return True
+
+    def createSurvey(self):
+        self.clickCreateSurvey()
+        self.sendSyrveyTitle()
+        self.surveyCategory()
+        self.buttonCreateSurvey()
+        self.handlePopup()
+
